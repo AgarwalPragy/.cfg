@@ -39,7 +39,8 @@ def fix_keyboard():
 
 def adjust_brightness():
     current1, current2 = $(xrandr --verbose | grep brightness | cut -f2 -d ' ').split()
-    new1, new2 = current1, current2
+    # new1, new2 = current1, current2
+    new1, new2 = 0.5, 2
     print('old brightness:', current1, current2)
     print('new brightness', new1, new2)
     displays = [line.strip() for line in $(xrandr -q | grep " connected").split('\n') if line.strip()]
