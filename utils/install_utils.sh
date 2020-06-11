@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 sudo apt-get --assume-yes install pyenv
@@ -92,13 +93,8 @@ sudo python3 -m pip uninstall -y docker-py
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Desktop Settings"
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-gsettings set org.gnome.desktop.interface clock-format '12h'
-gsettings set org.gnome.desktop.interface clock-show-seconds true
-gsettings set org.gnome.desktop.interface clock-show-weekday true
-gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 13'
-gsettings set org.gnome.desktop.interface show-battery-percentage true
-gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+dconf load / < ~/.dconf-dump.ini
+
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "going to restart"
