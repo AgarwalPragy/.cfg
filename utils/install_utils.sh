@@ -69,7 +69,7 @@ echo "--------------------------------------------------------------------------
 echo "Xonsh"
 sudo apt-get --assume-yes install xonsh
 sudo echo $(which xonsh) >> /etc/shells
-sudo chsh -s $(which xonsh)
+sudo chsh -s $(which xonsh) $(whoami)
 cp ~/personalize/.xonshrc ~/
 sudo apt-get --assume-yes install python3-pip
 xonsh -c "xpip install xonsh-apt-tabcomplete"
