@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# Make user-local directories
-# mkdir -p ~/.local/bin
-echo "------------------------------------------------------------------------------------------------------"
-
-# Git
-cd ~/personalize
-git remote set-url origin git@github.com:AgarwalPragy/personalize.git
-cp ~/personalize/.gitconfig ~/
-bash make_github_key.sh
-cd ~/
-echo "------------------------------------------------------------------------------------------------------"
-
 sudo apt-get --assume-yes install pyenv
 sudo apt-get --assume-yes install tmux
 sudo apt-get --assume-yes install xclip
