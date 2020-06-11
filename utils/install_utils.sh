@@ -102,7 +102,7 @@ gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "going to restart"
--read
--echo "rebooting in 10 seconds"
--sleep 10
--reboot
+read
+echo "rebooting in 10 seconds"
+sleep 10
+reboot
