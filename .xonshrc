@@ -1,0 +1,91 @@
+import os
+
+
+def show_custom_help():
+    snippets = [
+        ('environment variables', '$HOME, $PATH'),
+        ('Unset environment variable', 'del $GOAL'),
+        ('Complete environment', '${...}'),
+        ('Check if environment variable exists', '\'HOME\' in ${...}'),
+        ('Get help about a specific environment variable', '${...}.help(\'HOME\')'),
+        ('Temporarily set environment variable', 'with ${...}.swap(SOMEVAR=\'foo\'): ...'),
+        ('Construct environment name programatically', '${python expression}'),
+        ('Execute and capture subprocess, output as string', 'output = $(command here) or !(...)'),
+        ('Uncaptured subprocess, output to screen', 'output = $[command here] or ![...]'),
+        ('Getting return code of processs', 'Use ![] !() instead of $[] $()')
+    ]
+
+    prompt_len = max(len(line[0]) for line in snippets)
+    print()
+    for prompt, code in snippets:
+        print(f'{" " * (prompt_len - len(prompt))} {prompt}     {code}\n')
+
+
+def dark_theme():
+    $[gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark']
+
+def append_to_path(dir):
+    dir = dir.strip()
+    if dir not in $PATH:
+        $PATH.append(dir)
+
+def fix_keyboard():
+    $[setxkbmap -option]  # clear previous mappings
+    print('Mapping Caps Lock to BackSpace')
+    $[setxkbmap -option caps:backspace]
+    $[setxkbmap -option shift:both_capslock]
+    $[xmodmap -e "clear Lock"]
+    $[xset r rate 220 40]  # repeat keys delay and rate
+
+def adjust_brightness():
+    current1, current2 = $(xrandr --verbose | grep brightness | cut -f2 -d ' ').split()
+    new1, new2 = current1, current2
+    print('old brightness:', current1, current2)
+    print('new brightness', new1, new2)
+    displays = [line.strip() for line in $(xrandr -q | grep " connected").split('\n') if line.strip()]
+    displays = [line[:line.index('\x1b[01;')].strip() for line in displays]
+    primary, secondary = displays
+    $[xrandr --output @(primary) --brightness @(new1)]
+    $[xrandr --output @(secondary) --brightness @(new2)]
+
+
+fix_keyboard()
+append_to_path('~/.local/bin/')
+
+aliases['fixkey'] = fix_keyboard
+aliases['xh'] = show_custom_help
+
+aliases['b'] = adjust_brightness
+
+aliases['ll'] = 'ls -lhaFG'
+aliases['l'] = 'ls -aFG'
+
+aliases['gis'] = 'git status -s'
+aliases['gl'] = '''git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all'''
+aliases['gll'] = '''git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all'''
+
+aliases['grep'] = 'grep -i --color=always'
+
+aliases['mkdir'] = 'mkdir -pv'
+
+aliases['find'] = 'fdfind'
+
+aliases['cat'] = 'batcat'
+
+aliases['top'] = 'htop'
+
+aliases['rm'] = 'rm -iv'
+
+aliases['cfg'] = 'git --git-dir=~/.cfg/ --work-tree=~/'
+
+$XONSH_HISTORY_MATCH_ANYWHERE = True
+$XONSH_SHOW_TRACEBACK=True
+$LS_COLORS='rs=0:di=01;36:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:'
+
+xontrib load apt_tabcomplete
+xontrib load autovox
+xontrib load docker_tabcomplete
+xontrib load powerline2
+xontrib load readable-traceback
+xontrib load vox
+xontrib load pyenv
