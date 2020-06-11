@@ -12,7 +12,7 @@ sudo apt-get --assume-yes install vim
 sudo apt-get --assume-yes install dconf-editor
 echo "------------------------------------------------------------------------------------------------------"
 
-# JetBrains Mono
+echo "JetBrains Mono"
 wget https://github.com/JetBrains/JetBrainsMono/releases/download/v1.0.6/JetBrainsMono-1.0.6.zip
 unzip JetBrainsMono*.zip
 sudo mv ~/JetBrainsMono*/ttf/*.ttf /usr/share/fonts/
@@ -20,15 +20,15 @@ rm -rf ~/JetBrainsMono*
 fc-cache -fv 2>&1
 echo "------------------------------------------------------------------------------------------------------"
 
-# Rust
+echo "Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo "------------------------------------------------------------------------------------------------------"
 
-# Pycharm
+echo "Pycharm"
 sudo snap install pycharm-professional --classic
 echo "------------------------------------------------------------------------------------------------------"
 
-# Sublime Text
+echo "Sublime Text"
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get --assume-yes install apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -40,23 +40,23 @@ wget "https://packagecontrol.io/Package%20Control.sublime-package"
 cd ~
 echo "------------------------------------------------------------------------------------------------------"
 
-# Chrome
+echo "Chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt --assume-yes install ./google-chrome*.deb
 rm ./google-chrome*.deb
 echo "------------------------------------------------------------------------------------------------------"
 
-# VSCode
+# echo "VSCode"
 # sudo snap install --classic code
 # cp vs_code_keybindings.json ~/.config/Code/User/keybindings.json
 echo "------------------------------------------------------------------------------------------------------"
 
-# locate
+echo "locate"
 sudo apt-get --assume-yes install mlocate
 sudo updatedb
 echo "------------------------------------------------------------------------------------------------------"
 
-# Guake
+echo "Guake"
 sudo apt-get --assume-yes install guake
 mkdir ~/.config/autostart
 cp /usr/share/applications/guake.desktop ~/.config/autostart/
@@ -64,10 +64,9 @@ echo "X-GNOME-Autostart-enabled=true" >> ~/.config/autostart/guake.desktop
 dconf write /apps/guake/style/font/style "'JetBrains Mono Bold 12'"
 dconf write /apps/guake/style/background/transparency 100
 dconf write /apps/guake/general/use-default-font false
-
 echo "------------------------------------------------------------------------------------------------------"
 
-# Xonsh
+echo "Xonsh"
 sudo apt-get --assume-yes install xonsh
 sudo echo $(which xonsh) >> /etc/shells
 sudo chsh -s $(which xonsh)
@@ -80,7 +79,7 @@ xonsh -c "xpip install xontrib-readable-traceback"
 xonsh -c "xpip install xontrib-pyenv"
 echo "------------------------------------------------------------------------------------------------------"
 
-# Docker
+echo "Docker"
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -92,7 +91,7 @@ sudo apt-get --assume-yes install docker-compose
 sudo python3 -m pip uninstall -y docker-py
 echo "------------------------------------------------------------------------------------------------------"
 
-# Desktop Settings
+echo "Desktop Settings"
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface clock-format '12h'
 gsettings set org.gnome.desktop.interface clock-show-seconds true
