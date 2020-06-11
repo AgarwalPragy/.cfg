@@ -17,7 +17,7 @@ wget https://github.com/JetBrains/JetBrainsMono/releases/download/v1.0.6/JetBrai
 unzip JetBrainsMono*.zip
 sudo mv ~/JetBrainsMono*/ttf/*.ttf /usr/share/fonts/
 rm -rf ~/JetBrainsMono*
-fc-cache -fv
+fc-cache -fv 2>&1
 echo "------------------------------------------------------------------------------------------------------"
 
 # Rust
