@@ -1,0 +1,11 @@
+{
+    "font_face": "JetBrains Mono",
+    "highlight_line": true,
+    "default_line_ending": "unix",
+    "show_line_endings": true,
+    "show_encoding": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	]
+}
