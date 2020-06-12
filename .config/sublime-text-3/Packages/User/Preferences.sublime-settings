@@ -1,11 +1,12 @@
 {
-    "font_face": "JetBrains Mono",
-    "highlight_line": true,
-    "default_line_ending": "unix",
-    "show_line_endings": true,
-    "show_encoding": true,
+	"default_line_ending": "unix",
+	"font_face": "JetBrains Mono",
+	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Python",
 		"Vintage"
-	]
+	],
+	"show_encoding": true,
+	"show_line_endings": true
 }
