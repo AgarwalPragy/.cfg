@@ -62,9 +62,7 @@ sudo apt-get --assume-yes install guake
 mkdir ~/.config/autostart
 cp /usr/share/applications/guake.desktop ~/.config/autostart/
 echo "X-GNOME-Autostart-enabled=true" >> ~/.config/autostart/guake.desktop
-dconf write /apps/guake/style/font/style "'JetBrains Mono Bold 12'"
-dconf write /apps/guake/style/background/transparency 100
-dconf write /apps/guake/general/use-default-font false
+# guake preferences are loaded via dconf
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Xonsh"
@@ -97,8 +95,6 @@ dconf load / < ~/.dconf-dump.ini
 
 echo "------------------------------------------------------------------------------------------------------"
 
-echo "going to restart"
-read
 echo "rebooting in 10 seconds"
 sleep 10
 reboot
