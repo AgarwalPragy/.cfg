@@ -11,6 +11,8 @@ sudo apt-get --assume-yes install fd-find
 sudo apt-get --assume-yes install tldr
 sudo apt-get --assume-yes install vim
 sudo apt-get --assume-yes install dconf-editor
+sudo apt-get --assume-yes install ffmpeg
+sudo snap install vlc
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "JetBrains Mono"
@@ -80,7 +82,7 @@ echo "--------------------------------------------------------------------------
 
 echo "Docker"
 sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+sudo apt-get --assume-yes install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
@@ -92,7 +94,10 @@ echo "--------------------------------------------------------------------------
 
 echo "Desktop Settings"
 dconf load / < ~/.dconf-dump.ini
+echo "------------------------------------------------------------------------------------------------------"
 
+sudo apt-get update
+sudo apt-get --assume-yes upgrade
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "rebooting in 10 seconds"
