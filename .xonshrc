@@ -1,3 +1,4 @@
+import time
 import os
 
 
@@ -38,16 +39,33 @@ def fix_keyboard():
     $[xset r rate 220 40]  # repeat keys delay and rate
 
 def adjust_brightness():
-    current1, current2 = $(xrandr --verbose | grep brightness | cut -f2 -d ' ').split()
-    # new1, new2 = current1, current2
-    new1, new2 = 0.5, 2
-    print('old brightness:', current1, current2)
-    print('new brightness', new1, new2)
-    displays = [line.strip() for line in $(xrandr -q | grep " connected").split('\n') if line.strip()]
-    displays = [line[:line.index('\x1b[01;')].strip() for line in displays]
-    primary, secondary = displays
-    $[xrandr --output @(primary) --brightness @(new1)]
-    $[xrandr --output @(secondary) --brightness @(new2)]
+    monitors = [line.strip() for line in $(xrandr --listmonitors).split('\n') if line.strip()][1:]
+    if len(monitors) != 2:
+        $(notify-send -t 5000 -i face-surprise-symbolic f'{len(monitors)} monitor(s) detected!' @('\r'.join(monitors)))
+        print(f'{len(monitors)} monitor(s) detected!\n' + '\n'.join(monitors))
+        return
+    primary, secondary = monitors
+    if 'x2160' in secondary:
+        primary, secondary = secondary, primary
+    monitors = primary, secondary
+    monitors = [line.split()[-1] for line in monitors]
+    primary, secondary = monitors
+    with open('/sys/class/backlight/intel_backlight/max_brightness', 'r') as f:
+        max_brightness = int(f.read())
+    start_time = time.time()
+    initial_value = None
+    $(notify-send -t 5000 'Adjusting brightness')
+    while time.time() - start_time < 10:
+        with open('/sys/class/backlight/intel_backlight/brightness', 'r') as f:
+            brightness = int(f.read())
+        if brightness != initial_value:
+            start_time = time.time()
+            initial_value = brightness
+        primary_value = 1.5 * (brightness - 240)/max_brightness
+        secondary_value = 3.5 * primary_value
+        $[xrandr --output @(primary) --brightness @(primary_value)]
+        $[xrandr --output @(secondary) --brightness @(secondary_value)]
+        time.sleep(0.1)
 
 
 fix_keyboard()
