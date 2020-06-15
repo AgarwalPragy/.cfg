@@ -27,8 +27,13 @@ echo "Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo "------------------------------------------------------------------------------------------------------"
 
-echo "Pycharm"
+echo "Exa"
+cargo install exa
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "JetBrains"
 sudo snap install pycharm-professional --classic
+sudo snap install intellij-idea-ultimate --classic
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Sublime Text"
