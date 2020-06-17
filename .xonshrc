@@ -38,43 +38,12 @@ def fix_keyboard():
     $[xmodmap -e "clear Lock"]
     $[xset r rate 220 40]  # repeat keys delay and rate
 
-def adjust_brightness():
-    monitors = [line.strip() for line in $(xrandr --listmonitors).split('\n') if line.strip()][1:]
-    if len(monitors) != 2:
-        $(notify-send -t 5000 -i face-surprise-symbolic f'{len(monitors)} monitor(s) detected!' @('\r'.join(monitors)))
-        print(f'{len(monitors)} monitor(s) detected!\n' + '\n'.join(monitors))
-        return
-    primary, secondary = monitors
-    if 'x2160' in secondary:
-        primary, secondary = secondary, primary
-    monitors = primary, secondary
-    monitors = [line.split()[-1] for line in monitors]
-    primary, secondary = monitors
-    with open('/sys/class/backlight/intel_backlight/max_brightness', 'r') as f:
-        max_brightness = int(f.read())
-    start_time = time.time()
-    initial_value = None
-    $(notify-send -t 5000 'Adjusting brightness')
-    while time.time() - start_time < 10:
-        with open('/sys/class/backlight/intel_backlight/brightness', 'r') as f:
-            brightness = int(f.read())
-        if brightness != initial_value:
-            start_time = time.time()
-            initial_value = brightness
-        primary_value = 1.5 * (brightness - 240)/max_brightness
-        secondary_value = 3.5 * primary_value
-        $[xrandr --output @(primary) --brightness @(primary_value)]
-        $[xrandr --output @(secondary) --brightness @(secondary_value)]
-        time.sleep(0.1)
-
 
 fix_keyboard()
 append_to_path('~/.local/bin/')
 
 aliases['fixkey'] = fix_keyboard
 aliases['xh'] = show_custom_help
-
-aliases['b'] = adjust_brightness
 
 aliases['ll'] = 'exa -lhaF'
 aliases['l'] = 'exa -aFG'
@@ -105,7 +74,7 @@ $LS_COLORS='rs=0:di=01;36:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 
 xontrib load apt_tabcomplete
 xontrib load autovox
-xontrib load docker_tabcomplete
+# xontrib load docker_tabcomplete
 xontrib load powerline2
 xontrib load readable-traceback
 xontrib load vox
