@@ -97,6 +97,12 @@ sudo apt-get --assume-yes install docker-compose
 sudo python3 -m pip uninstall -y docker-py
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "Howdy"
+sudo add-apt-repository ppa:boltgolt/howdy
+sudo apt update
+sudo apt --assume-yes install howdy
+echo "------------------------------------------------------------------------------------------------------"
+
 echo "Desktop Settings"
 dconf load / < ~/.dconf-dump.ini
 echo "------------------------------------------------------------------------------------------------------"
