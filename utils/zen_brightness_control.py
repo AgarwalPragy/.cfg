@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 import re
 from dataclasses import dataclass
@@ -77,8 +79,10 @@ def main():
         percent = new_percent
         if hot_mode_start_time is None:
             time.sleep(poll_time)
+            adjust(percent)
         else:
             time.sleep(hot_mode_poll_time)
+
 
 if __name__ == '__main__':
     main()
