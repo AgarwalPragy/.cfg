@@ -12,6 +12,8 @@ sudo apt-get --assume-yes install tldr
 sudo apt-get --assume-yes install vim
 sudo apt-get --assume-yes install dconf-editor
 sudo apt-get --assume-yes install ffmpeg
+sudo apt-get --assume-yes install gnome-tweaks
+sudo apt-get --assume-yes install screenruler
 sudo snap install vlc
 echo "------------------------------------------------------------------------------------------------------"
 
@@ -98,19 +100,22 @@ sudo python3 -m pip uninstall -y docker-py
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Howdy"
+# this doesn't work well. Howdy tries to detect IR sensors on install, which requires interactive shell
 sudo add-apt-repository ppa:boltgolt/howdy
 sudo apt-get update
 sudo apt-get --assume-yes install howdy
-echo "------------------------------------------------------------------------------------------------------"
-
-echo "Gnome Tweak Tools"
-sudo apt-get --assume-yes install gnome-tweaks
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Xournal++"
 sudo add-apt-repository ppa:andreasbutti/xournalpp-master
 sudo apt update
 sudo apt-get --assume-yes install xournalpp
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "Sensors"
+sudo apt-get --assume-yes install lm-sensors
+sudo apt-get --assume-yes install hddtemp
+sudo apt-get --assume-yes install psensor
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Desktop Settings"
