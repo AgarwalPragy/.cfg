@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/pragy/utils/zen_brightness_control.py
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_IN]=zen-brightness
+Name=zen-brightness
+Comment[en_IN]=
+Comment=
