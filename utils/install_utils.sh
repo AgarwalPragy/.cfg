@@ -107,6 +107,12 @@ echo "Gnome Tweak Tools"
 sudo apt-get --assume-yes install gnome-tweaks
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "Xournal++"
+sudo add-apt-repository ppa:andreasbutti/xournalpp-master
+sudo apt update
+sudo apt-get --assume-yes install xournalpp
+echo "------------------------------------------------------------------------------------------------------"
+
 echo "Desktop Settings"
 dconf load / < ~/.dconf-dump.ini
 echo "------------------------------------------------------------------------------------------------------"
