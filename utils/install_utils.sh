@@ -45,9 +45,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get --assume-yes install sublime-text
 # packages
-cd ~/.config/sublime-text-3/Installed\ Packages/
-wget "https://packagecontrol.io/Package%20Control.sublime-package"
-cd ~
+wget -O "$HOME/.config/sublime-text-3/Installed Packages/Package Control.sublime-package" "https://packagecontrol.io/Package%20Control.sublime-package"
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Chrome"
