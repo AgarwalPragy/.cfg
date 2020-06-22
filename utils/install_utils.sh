@@ -99,16 +99,26 @@ echo "--------------------------------------------------------------------------
 
 echo "Howdy"
 sudo add-apt-repository ppa:boltgolt/howdy
-sudo apt update
-sudo apt --assume-yes install howdy
+sudo apt-get update
+sudo apt-get --assume-yes install howdy
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "Gnome Tweak Tools"
+sudo apt-get --assume-yes install gnome-tweaks
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Desktop Settings"
 dconf load / < ~/.dconf-dump.ini
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "Updates"
 sudo apt-get update
 sudo apt-get --assume-yes upgrade
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "Configuring sudo"
+# proceed with caution, you don't want a system with no su priviliges
+echo "Defaults insults" | sudo EDITOR='tee -a' visudo
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "rebooting in 10 seconds"
