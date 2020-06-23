@@ -29,6 +29,18 @@ echo "Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "Dictionary"
+# based on https://askubuntu.com/questions/170775/offline-dictionary-with-pronunciation-and-usages/
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+sudo apt-get --assume-yes install dict
+sudo apt-get --assume-yes install dictd
+sudo apt-get --assume-yes install dict-gcide
+sudo apt-get --assume-yes install dict-wn
+sudo apt-get --assume-yes install dict-devil
+sudo apt-get --assume-yes install dict-moby-thesaurus
+sudo apt-get --assume-yes install espeak
+echo "------------------------------------------------------------------------------------------------------"
+
 echo "Exa"
 ~/.cargo/bin/cargo install exa
 echo "------------------------------------------------------------------------------------------------------"

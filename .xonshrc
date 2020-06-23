@@ -22,6 +22,15 @@ def show_custom_help():
         print(f'{" " * (prompt_len - len(prompt))} {prompt}     {code}\n')
 
 
+def _define(args):
+    word = ''
+    if isinstance(args, list):
+        word = ' '.join(args)
+    elif isinstance(args, str):
+        word = args
+    $[dict @(word)]
+    $[espeak -ven-uk-rp -s 120 @(word)]
+
 def dark_theme():
     $[gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark']
 
@@ -41,6 +50,8 @@ def fix_keyboard():
 
 fix_keyboard()
 append_to_path('~/.local/bin/')
+
+aliases['define'] = _define
 
 aliases['fixkey'] = fix_keyboard
 aliases['xh'] = show_custom_help
@@ -79,3 +90,13 @@ xontrib load powerline2
 xontrib load readable-traceback
 xontrib load vox
 xontrib load pyenv
+
+# Coloured man page support
+# using 'less' env vars (format is '\E[<brightness>;<colour>m')
+$LESS_TERMCAP_mb = "\033[01;31m"     # begin blinking
+$LESS_TERMCAP_md = "\033[01;31m"     # begin bold
+$LESS_TERMCAP_me = "\033[0m"         # end mode
+$LESS_TERMCAP_so = "\033[01;44;36m"  # begin standout-mode (bottom of screen)
+$LESS_TERMCAP_se = "\033[0m"         # end standout-mode
+$LESS_TERMCAP_us = "\033[00;36m"     # begin underline
+$LESS_TERMCAP_ue = "\033[0m"         # end underline
