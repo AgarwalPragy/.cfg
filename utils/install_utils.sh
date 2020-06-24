@@ -14,6 +14,7 @@ sudo apt-get --assume-yes install dconf-editor
 sudo apt-get --assume-yes install ffmpeg
 sudo apt-get --assume-yes install gnome-tweaks
 sudo apt-get --assume-yes install screenruler
+sudo apt-get --assume-yes install texstudio
 sudo snap install vlc
 echo "------------------------------------------------------------------------------------------------------"
 
