@@ -39,21 +39,11 @@ def append_to_path(dir):
     if dir not in $PATH:
         $PATH.append(dir)
 
-def fix_keyboard():
-    $[setxkbmap -option]  # clear previous mappings
-    print('Mapping Caps Lock to BackSpace')
-    $[setxkbmap -option caps:backspace]
-    $[setxkbmap -option shift:both_capslock]
-    $[xmodmap -e "clear Lock"]
-    $[xset r rate 220 40]  # repeat keys delay and rate
 
-
-fix_keyboard()
 append_to_path('~/.local/bin/')
 
 aliases['define'] = _define
 
-aliases['fixkey'] = fix_keyboard
 aliases['xh'] = show_custom_help
 
 aliases['ll'] = 'exa -lhaF'
