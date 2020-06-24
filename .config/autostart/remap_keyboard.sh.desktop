@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/pragy/utils/remap_keyboard.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_IN]=Keyboard Remap
+Name=Keyboard Remap
+Comment[en_IN]=
+Comment=
