@@ -5,7 +5,8 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Python"
+		"Python",
+		"Vintage"
 	],
 	"show_encoding": true,
 	"show_line_endings": true

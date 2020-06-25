@@ -11,11 +11,16 @@ sudo apt-get --assume-yes install fd-find
 sudo apt-get --assume-yes install tldr
 sudo apt-get --assume-yes install vim
 sudo apt-get --assume-yes install dconf-editor
-sudo apt-get --assume-yes install ffmpeg
 sudo apt-get --assume-yes install gnome-tweaks
 sudo apt-get --assume-yes install screenruler
 sudo apt-get --assume-yes install texstudio
+sudo apt-get --assume-yes install synaptic
 sudo snap install vlc
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "development dependencies"
+sudo apt-get --assume-yes install build-essential ffmpeg fluid-soundfont-gm fontconfig fonts-freefont-ttf gstreamer1.0-plugins-base gstreamer1.0-plugins-good libavcodec-dev libavformat-dev libfreetype6-dev libgstreamer1.0 libportmidi-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libsmpeg-dev libswscale-dev libtiff5-dev libx11-6 libx11-dev timgm6mb-soundfont xfonts-100dpi xfonts-75dpi xfonts-base xfonts-cyrillic zlib1g-dev
+sudo apt-get install -f
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "JetBrains Mono"

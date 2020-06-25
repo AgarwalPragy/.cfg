@@ -3,7 +3,7 @@ ruler_x: 0
 ruler_y: 1062
 ruler_length: 3839
 track_mouse: true
-metric: 0
+metric: 1
 keep_above: true
 foreground_color: "#202020"
 background_color: "#e6e36b"
