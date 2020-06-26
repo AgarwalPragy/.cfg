@@ -120,6 +120,8 @@ echo "Howdy"
 sudo add-apt-repository ppa:boltgolt/howdy
 sudo apt-get update
 sudo apt-get --assume-yes install howdy
+sudo mkdir -p /usr/lib/security/howdy/models
+sudo cp $HOME/utils/.howdy-pragy /usr/lib/security/howdy/models/pragy.dat 
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Xournal++"
