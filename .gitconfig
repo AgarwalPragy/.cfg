@@ -1,5 +1,10 @@
 [core]
 	ignorecase = false
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	whitespace = -trailing-space
 [user]
 	name = Pragy Agarwal
 	email = agar.pragy@gmail.com
+[color]
+	ui = auto

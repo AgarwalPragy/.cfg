@@ -121,7 +121,7 @@ sudo add-apt-repository ppa:boltgolt/howdy
 sudo apt-get update
 sudo apt-get --assume-yes install howdy
 sudo mkdir -p /usr/lib/security/howdy/models
-sudo cp $HOME/utils/.howdy-pragy /usr/lib/security/howdy/models/pragy.dat 
+sudo cp $HOME/utils/.howdy-pragy /usr/lib/security/howdy/models/pragy.dat
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Xournal++"
@@ -138,6 +138,11 @@ echo "--------------------------------------------------------------------------
 
 echo "Desktop Settings"
 dconf load / < ~/.dconf-dump.ini
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "Global gitignore"
+git clone https://github.com/github/gitignore.git ~/.gitignore_repo
+cat ~/utils/custom.gitignore ~/.gitignore_repo/Python.gitignore ~/.gitignore_repo/Java.gitignore ~/.gitignore_repo/TeX.gitignore ~/.gitignore_repo/Ruby.gitignore ~/.gitignore_repo/Rails.gitignore ~/.gitignore_repo/Global/JetBrains.gitignore ~/.gitignore_repo/Global/Linux.gitignore  ~/.gitignore_repo/Global/macOS.gitignore > ~/.gitignore_global
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Updates"
