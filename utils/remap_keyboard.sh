@@ -8,5 +8,5 @@ do
 	setxkbmap -option shift:both_capslock
 	xmodmap -e "clear Lock"
 	xset r rate 220 40
-	sleep 10m
+	sleep 1m
 done
