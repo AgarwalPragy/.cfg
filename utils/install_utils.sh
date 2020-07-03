@@ -8,7 +8,6 @@ sudo apt-get --assume-yes install bat
 sudo apt-get --assume-yes install htop
 sudo apt-get --assume-yes install ranger
 sudo apt-get --assume-yes install fd-find
-sudo apt-get --assume-yes install tldr
 sudo apt-get --assume-yes install vim
 sudo apt-get --assume-yes install dconf-editor
 sudo apt-get --assume-yes install gnome-tweaks
@@ -45,6 +44,11 @@ sudo apt-get --assume-yes install dict-wn
 sudo apt-get --assume-yes install dict-devil
 sudo apt-get --assume-yes install dict-moby-thesaurus
 sudo apt-get --assume-yes install espeak
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "tldr"
+sudo apt-get --assume-yes install tldr
+/usr/bin/tldr --update
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Exa"
