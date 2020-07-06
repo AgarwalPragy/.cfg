@@ -117,6 +117,13 @@ sudo apt-get --assume-yes install docker-ce docker-ce-cli containerd.io
 sudo apt-get --assume-yes install docker-compose
 # temporary fix for docker-compose bug
 sudo python3 -m pip uninstall -y docker-py
+# https://docs.docker.com/engine/install/linux-postinstall/
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+rm -rf ~/.docker/
+sudo systemctl enable docker
+sudo service docker restart
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Howdy"
