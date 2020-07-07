@@ -34,6 +34,18 @@ echo "Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "Node, NPM"
+sudo apt-get --assume-yes install nodejs
+sudo apt-get --assume-yes install npm
+sudo /usr/local/bin/npm install npm@latest -g
+echo "------------------------------------------------------------------------------------------------------"
+
+# https://rustwasm.github.io/docs/book/game-of-life/setup.html
+echo "Rust wasm toolchain"
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+~/.cargo/bin/cargo install cargo-generate
+echo "------------------------------------------------------------------------------------------------------"
+
 echo "Dictionary"
 # based on https://askubuntu.com/questions/170775/offline-dictionary-with-pronunciation-and-usages/
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
@@ -79,7 +91,7 @@ echo "--------------------------------------------------------------------------
 # echo "VSCode"
 # sudo snap install --classic code
 # cp vs_code_keybindings.json ~/.config/Code/User/keybindings.json
-echo "------------------------------------------------------------------------------------------------------"
+# echo "------------------------------------------------------------------------------------------------------"
 
 echo "locate"
 sudo apt-get --assume-yes install mlocate
