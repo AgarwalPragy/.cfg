@@ -1,5 +1,14 @@
-
 #!/bin/bash
+
+echo "apt-fast"
+sudo add-apt-repository ppa:apt-fast/stable
+sudo apt-get update
+sudo DEBIAN_FRONTEND=noninteractive apt-get -yq install apt-fast
+sudo cp ~/utils/apt-fast.conf /etc/
+echo "------------------------------------------------------------------------------------------------------"
+
+alias APT=sudo apt-fast -y install
+alias SNAP=sudo snap --color install
 
 sudo apt-get --assume-yes install pyenv
 sudo apt-get --assume-yes install tmux
@@ -22,6 +31,12 @@ sudo apt-get --assume-yes install build-essential ffmpeg fluid-soundfont-gm font
 sudo apt-get install -f
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "uget"
+sudo add-apt-repository ppa:plushuang-tw/uget-stable
+sudo apt-get update
+sudo apt-get --assume-yes install uget aria2
+echo "------------------------------------------------------------------------------------------------------"
+
 echo "JetBrains Mono"
 wget https://github.com/JetBrains/JetBrainsMono/releases/download/v1.0.6/JetBrainsMono-1.0.6.zip
 unzip JetBrainsMono*.zip
@@ -32,6 +47,7 @@ echo "--------------------------------------------------------------------------
 
 echo "Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+~/.cargo/bin/cargo install cargo-watch
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Node, NPM"
@@ -84,7 +100,7 @@ echo "--------------------------------------------------------------------------
 
 echo "Chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt --assume-yes install ./google-chrome*.deb
+sudo apt -y install ./google-chrome*.deb
 rm ./google-chrome*.deb
 echo "------------------------------------------------------------------------------------------------------"
 
@@ -170,7 +186,7 @@ echo "--------------------------------------------------------------------------
 
 echo "Updates"
 sudo apt-get update
-sudo apt-get --assume-yes upgrade
+sudo apt-get -y upgrade
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Configuring sudo"
