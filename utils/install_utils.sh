@@ -48,6 +48,13 @@ echo "--------------------------------------------------------------------------
 echo "Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ~/.cargo/bin/cargo install cargo-watch
+~/.cargo/bin/cargo install cargo-edit
+~/.cargo/bin/cargo install cargo-update
+~/.cargo/bin/cargo install cargo-deb
+~/.cargo/bin/cargo install cargo-web
+~/.cargo/bin/cargo install cargo-expand
+~/.cargo/bin/cargo install cargo-release
+~/.cargo/bin/cargo install cargo-tree
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Node, NPM"
