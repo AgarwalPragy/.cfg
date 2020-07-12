@@ -10,31 +10,31 @@ echo "--------------------------------------------------------------------------
 alias APT=sudo apt-fast -y install
 alias SNAP=sudo snap --color install
 
-sudo apt-get --assume-yes install pyenv
-sudo apt-get --assume-yes install tmux
-sudo apt-get --assume-yes install xclip
-sudo apt-get --assume-yes install bat
-sudo apt-get --assume-yes install htop
-sudo apt-get --assume-yes install ranger
-sudo apt-get --assume-yes install fd-find
-sudo apt-get --assume-yes install vim
-sudo apt-get --assume-yes install dconf-editor
-sudo apt-get --assume-yes install gnome-tweaks
-sudo apt-get --assume-yes install screenruler
-sudo apt-get --assume-yes install texstudio
-sudo apt-get --assume-yes install synaptic
-sudo snap install vlc
+APT pyenv
+APT tmux
+APT xclip
+APT bat
+APT htop
+APT ranger
+APT fd-find
+APT vim
+APT dconf-editor
+APT gnome-tweaks
+APT screenruler
+APT texstudio
+APT synaptic
+SNAP vlc
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "development dependencies"
-sudo apt-get --assume-yes install build-essential ffmpeg fluid-soundfont-gm fontconfig fonts-freefont-ttf gstreamer1.0-plugins-base gstreamer1.0-plugins-good libavcodec-dev libavformat-dev libfreetype6-dev libgstreamer1.0 libportmidi-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libsmpeg-dev libswscale-dev libtiff5-dev libx11-6 libx11-dev timgm6mb-soundfont xfonts-100dpi xfonts-75dpi xfonts-base xfonts-cyrillic zlib1g-dev
+APT build-essential ffmpeg fluid-soundfont-gm fontconfig fonts-freefont-ttf gstreamer1.0-plugins-base gstreamer1.0-plugins-good libavcodec-dev libavformat-dev libfreetype6-dev libgstreamer1.0 libportmidi-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libsmpeg-dev libswscale-dev libtiff5-dev libx11-6 libx11-dev timgm6mb-soundfont xfonts-100dpi xfonts-75dpi xfonts-base xfonts-cyrillic zlib1g-dev
 sudo apt-get install -f
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "uget"
 sudo add-apt-repository ppa:plushuang-tw/uget-stable
-sudo apt-get update
-sudo apt-get --assume-yes install uget aria2
+sudo apt-fast update
+APT uget aria2
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "JetBrains Mono"
@@ -51,8 +51,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Node, NPM"
-sudo apt-get --assume-yes install nodejs
-sudo apt-get --assume-yes install npm
+APT nodejs
+APT npm
 sudo /usr/local/bin/npm install npm@latest -g
 echo "------------------------------------------------------------------------------------------------------"
 
@@ -65,17 +65,17 @@ echo "--------------------------------------------------------------------------
 echo "Dictionary"
 # based on https://askubuntu.com/questions/170775/offline-dictionary-with-pronunciation-and-usages/
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
-sudo apt-get --assume-yes install dict
-sudo apt-get --assume-yes install dictd
-sudo apt-get --assume-yes install dict-gcide
-sudo apt-get --assume-yes install dict-wn
-sudo apt-get --assume-yes install dict-devil
-sudo apt-get --assume-yes install dict-moby-thesaurus
-sudo apt-get --assume-yes install espeak
+APT dict
+APT dictd
+APT dict-gcide
+APT dict-wn
+APT dict-devil
+APT dict-moby-thesaurus
+APT espeak
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "tldr"
-sudo apt-get --assume-yes install tldr
+APT tldr
 /usr/bin/tldr --update
 echo "------------------------------------------------------------------------------------------------------"
 
@@ -84,16 +84,16 @@ echo "Exa"
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "JetBrains"
-sudo snap install pycharm-professional --classic
-sudo snap install intellij-idea-ultimate --classic
+SNAP pycharm-professional --classic
+SNAP intellij-idea-ultimate --classic
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Sublime Text"
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-sudo apt-get --assume-yes install apt-transport-https
+APT apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get --assume-yes install sublime-text
+sudo apt-fast update
+APT sublime-text
 # packages
 wget -O "$HOME/.config/sublime-text-3/Installed Packages/Package Control.sublime-package" "https://packagecontrol.io/Package%20Control.sublime-package"
 echo "------------------------------------------------------------------------------------------------------"
@@ -105,17 +105,17 @@ rm ./google-chrome*.deb
 echo "------------------------------------------------------------------------------------------------------"
 
 # echo "VSCode"
-# sudo snap install --classic code
+# SNAP --classic code
 # cp vs_code_keybindings.json ~/.config/Code/User/keybindings.json
 # echo "------------------------------------------------------------------------------------------------------"
 
 echo "locate"
-sudo apt-get --assume-yes install mlocate
+APT mlocate
 sudo updatedb
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Guake"
-sudo apt-get --assume-yes install guake
+APT guake
 mkdir ~/.config/autostart
 cp /usr/share/applications/guake.desktop ~/.config/autostart/
 echo "X-GNOME-Autostart-enabled=true" >> ~/.config/autostart/guake.desktop
@@ -123,11 +123,11 @@ echo "X-GNOME-Autostart-enabled=true" >> ~/.config/autostart/guake.desktop
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Xonsh"
-sudo apt-get --assume-yes install xonsh
+APT xonsh
 sudo echo $(which xonsh) >> /etc/shells
 sudo chsh -s $(which xonsh) $(whoami)
 cp ~/personalize/.xonshrc ~/
-sudo apt-get --assume-yes install python3-pip
+APT python3-pip
 xonsh -c "xpip install xonsh-apt-tabcomplete"
 xonsh -c "xpip install xonsh-docker-tabcomplete"
 xonsh -c "xpip install xontrib-powerline2"
@@ -137,12 +137,12 @@ echo "--------------------------------------------------------------------------
 
 echo "Docker"
 sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo apt-get --assume-yes install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+APT apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get --assume-yes install docker-ce docker-ce-cli containerd.io
-sudo apt-get --assume-yes install docker-compose
+sudo apt-fast update
+APT docker-ce docker-ce-cli containerd.io
+APT docker-compose
 # temporary fix for docker-compose bug
 sudo python3 -m pip uninstall -y docker-py
 # https://docs.docker.com/engine/install/linux-postinstall/
@@ -157,8 +157,8 @@ echo "--------------------------------------------------------------------------
 echo "Howdy"
 # this doesn't work well. Howdy tries to detect IR sensors on install, which requires interactive shell
 sudo add-apt-repository ppa:boltgolt/howdy
-sudo apt-get update
-sudo apt-get --assume-yes install howdy
+sudo apt-fast update
+APT howdy
 sudo mkdir -p /usr/lib/security/howdy/models
 sudo cp $HOME/utils/.howdy-pragy /usr/lib/security/howdy/models/pragy.dat
 echo "------------------------------------------------------------------------------------------------------"
@@ -166,13 +166,13 @@ echo "--------------------------------------------------------------------------
 echo "Xournal++"
 sudo add-apt-repository ppa:andreasbutti/xournalpp-master
 sudo apt update
-sudo apt-get --assume-yes install xournalpp
+APT xournalpp
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Sensors"
-sudo apt-get --assume-yes install lm-sensors
-sudo apt-get --assume-yes install hddtemp
-sudo apt-get --assume-yes install psensor
+APT lm-sensors
+APT hddtemp
+APT psensor
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Desktop Settings"
@@ -185,7 +185,7 @@ cat ~/utils/custom.gitignore ~/.gitignore_repo/Python.gitignore ~/.gitignore_rep
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Updates"
-sudo apt-get update
+sudo apt-fast update
 sudo apt-get -y upgrade
 echo "------------------------------------------------------------------------------------------------------"
 
