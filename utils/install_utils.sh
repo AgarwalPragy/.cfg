@@ -23,6 +23,8 @@ APT gnome-tweaks
 APT screenruler
 APT texstudio
 APT synaptic
+APT net-tools
+APT guake
 SNAP vlc
 echo "------------------------------------------------------------------------------------------------------"
 
@@ -121,19 +123,10 @@ APT mlocate
 sudo updatedb
 echo "------------------------------------------------------------------------------------------------------"
 
-echo "Guake"
-APT guake
-mkdir ~/.config/autostart
-cp /usr/share/applications/guake.desktop ~/.config/autostart/
-echo "X-GNOME-Autostart-enabled=true" >> ~/.config/autostart/guake.desktop
-# guake preferences are loaded via dconf
-echo "------------------------------------------------------------------------------------------------------"
-
 echo "Xonsh"
 APT xonsh
 sudo echo $(which xonsh) >> /etc/shells
 sudo chsh -s $(which xonsh) $(whoami)
-cp ~/personalize/.xonshrc ~/
 APT python3-pip
 xonsh -c "xpip install xonsh-apt-tabcomplete"
 xonsh -c "xpip install xonsh-docker-tabcomplete"
