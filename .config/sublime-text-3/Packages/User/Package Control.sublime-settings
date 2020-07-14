@@ -5,21 +5,28 @@
 	],
 	"installed_packages":
 	[
+		"AutoFileName",
 		"BracketHighlighter",
 		"Color Highlighter",
 		"DeleteBlankLines",
 		"Git",
+		"GitGutter",
+		"HTML5",
 		"HTMLBeautify",
 		"INI",
 		"MagicPython",
 		"Markdown Extended",
 		"Package Control",
 		"Pretty JSON",
+		"Print to HTML",
 		"RemoveDuplicateLines",
 		"SideBarEnhancements",
+		"Sublimerge 3",
 		"Terminal",
+		"Text Pastry",
 		"TrailingSpaces",
 		"TypeScript Syntax",
-		"View In Browser"
+		"View In Browser",
+		"WordCount"
 	]
 }
