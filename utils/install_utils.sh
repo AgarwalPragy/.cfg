@@ -9,6 +9,14 @@ echo "--------------------------------------------------------------------------
 
 alias APT=sudo apt-fast -y install
 alias SNAP=sudo snap --color install
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "yarn"
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+APT yarn
+echo "------------------------------------------------------------------------------------------------------"
 
 APT pyenv
 APT tmux
@@ -69,6 +77,10 @@ echo "--------------------------------------------------------------------------
 echo "Rust wasm toolchain"
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 ~/.cargo/bin/cargo install cargo-generate
+# https://yew.rs/docs/getting-started/project-setup/using-wasm-pack
+# https://rollupjs.org/guide/en/#installation
+sudo npm install --global rollup
+sudo npm install @wasm-tool/wasm-pack-plugin
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Dictionary"
