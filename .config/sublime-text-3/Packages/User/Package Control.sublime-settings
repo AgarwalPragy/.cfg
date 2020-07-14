@@ -7,6 +7,7 @@
 	[
 		"BracketHighlighter",
 		"Color Highlighter",
+		"DeleteBlankLines",
 		"Git",
 		"HTMLBeautify",
 		"INI",
@@ -18,6 +19,7 @@
 		"SideBarEnhancements",
 		"Terminal",
 		"TrailingSpaces",
+		"TypeScript Syntax",
 		"View In Browser"
 	]
 }
