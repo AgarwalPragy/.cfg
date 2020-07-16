@@ -65,6 +65,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ~/.cargo/bin/cargo install cargo-expand
 ~/.cargo/bin/cargo install cargo-release
 ~/.cargo/bin/cargo install cargo-tree
+~/.cargo/bin/rustup toolchain install nightly
+~/.cargo/bin/rustup default stable
+# currently not available in stable channel
+# ~/.cargo/bin/cargo install miniserve
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Node, NPM"
@@ -106,6 +110,7 @@ echo "--------------------------------------------------------------------------
 
 echo "JetBrains"
 SNAP pycharm-professional --classic
+SNAP clion --classic
 SNAP intellij-idea-ultimate --classic
 echo "------------------------------------------------------------------------------------------------------"
 
