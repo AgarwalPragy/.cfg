@@ -50,10 +50,10 @@ APT uget aria2
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "JetBrains Mono"
-wget https://github.com/JetBrains/JetBrainsMono/releases/download/v1.0.6/JetBrainsMono-1.0.6.zip
-unzip JetBrainsMono*.zip
-sudo mv ~/JetBrainsMono*/ttf/*.ttf /usr/share/fonts/
-rm -rf ~/JetBrainsMono*
+wget https://github.com/JetBrains/JetBrainsMono/releases/download/v2.001/JetBrains.Mono.2.001.zip
+unzip -q JetBrains*Mono*.zip
+sudo mv ~/JetBrains*Mono*/ttf/*.ttf /usr/share/fonts/
+rm -rf ~/JetBrains*Mono*
 fc-cache -fv 2>&1
 echo "------------------------------------------------------------------------------------------------------"
 
