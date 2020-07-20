@@ -33,7 +33,9 @@ APT texstudio
 APT synaptic
 APT net-tools
 APT guake
+APT ruby-github-linguist
 SNAP vlc
+SNAP discord --classic
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "development dependencies"
@@ -75,6 +77,12 @@ echo "Node, NPM"
 APT nodejs
 APT npm
 sudo /usr/local/bin/npm install npm@latest -g
+sudo npm install --global rollup
+sudo npm install --global webpack webpack-cli
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "Svelte"
+sudo npm install --global svelte rollup-plugin-svelte
 echo "------------------------------------------------------------------------------------------------------"
 
 # https://rustwasm.github.io/docs/book/game-of-life/setup.html
@@ -82,8 +90,6 @@ echo "Rust wasm toolchain"
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 ~/.cargo/bin/cargo install cargo-generate
 # https://yew.rs/docs/getting-started/project-setup/using-wasm-pack
-# https://rollupjs.org/guide/en/#installation
-sudo npm install --global rollup
 sudo npm install @wasm-tool/wasm-pack-plugin
 echo "------------------------------------------------------------------------------------------------------"
 
