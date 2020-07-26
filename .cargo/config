@@ -1,0 +1,4 @@
+[cargo-new]
+name = "Pragy Agarwal"         # name to use in `authors` field
+email = "agar.pragy@gmail.com" # email address to use in `authors` field
+vcs = "git"                    # VCS to use ('git', 'hg', 'pijul', 'fossil', 'none')
