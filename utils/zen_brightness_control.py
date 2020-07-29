@@ -11,12 +11,12 @@ max_backlight_file = '/sys/class/backlight/intel_backlight/max_brightness'
 # and reading the contents of backlight_file
 min_backlight = 240
 re_monitor_data = re.compile(r'(\d+):\s*\S+\s*(\d+)/(\d+)x(\d+)/(\d+)\+(\d+)\+(\d+)\s*(.*)$')
-bottom_brightness_to_top_ratio = 3.5
+bottom_brightness_to_top_ratio = 2
 # this makes 100% brightness be equal to 150% actual brightness
 # in case some extra boost is needed to view dark graphics
-boost = 1.5
-poll_time = 4  # seconds
-hot_mode_poll_time = 0.3  # seconds
+boost = 1.25
+poll_time = 3  # seconds
+hot_mode_poll_time = 0.2  # seconds
 
 
 @dataclass

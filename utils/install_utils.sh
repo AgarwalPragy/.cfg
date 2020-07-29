@@ -192,6 +192,13 @@ sudo apt update
 APT xournalpp
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "zoom.us"
+wget -O Downloads/zoom.deb https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt update
+sudo apt install ~/Downloads/zoom.deb
+rm -f ~/Downloads/zoom.deb
+echo "------------------------------------------------------------------------------------------------------"
+
 echo "Sensors"
 APT lm-sensors
 APT hddtemp
