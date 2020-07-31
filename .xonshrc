@@ -60,6 +60,8 @@ aliases['mkdir'] = 'mkdir -pv'
 
 aliases['find'] = 'fdfind'
 
+aliases['du'] = 'dust'
+
 aliases['cat'] = 'batcat'
 
 aliases['top'] = 'htop'
