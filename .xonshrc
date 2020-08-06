@@ -70,6 +70,8 @@ aliases['rm'] = 'rm -iv'
 
 aliases['cfg'] = 'git --git-dir=~/.cfg/ --work-tree=~/'
 
+aliases['toggle'] = 'bash ~/utils/toggle_capslock_once.sh'
+
 aliases['pycharm'] = 'pycharm-professional'
 $XONSH_HISTORY_MATCH_ANYWHERE = True
 $XONSH_SHOW_TRACEBACK=True
