@@ -35,6 +35,7 @@ APT net-tools
 APT guake
 APT ruby-github-linguist
 APT pm-utils
+APT postgresql postgresql-contrib
 SNAP vlc
 SNAP discord --classic
 echo "------------------------------------------------------------------------------------------------------"
