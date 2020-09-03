@@ -38,6 +38,7 @@ APT pm-utils
 APT postgresql postgresql-contrib
 SNAP vlc
 SNAP discord --classic
+SNAP pdftk
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "development dependencies"
