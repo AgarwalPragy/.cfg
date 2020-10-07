@@ -16,6 +16,8 @@
 		"INI",
 		"MagicPython",
 		"Markdown Extended",
+		"MarkdownEditing",
+		"MarkdownPreview",
 		"Package Control",
 		"Pretty JSON",
 		"Print to HTML",

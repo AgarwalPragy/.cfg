@@ -29,7 +29,7 @@ APT vim
 APT dconf-editor
 APT gnome-tweaks
 APT screenruler
-APT texstudio
+APT texstudio texlive texlive-xetex texlive-font-utils texlive-fonts-extra texlive-extra-utils texlive-science texlive-pictures texlive-publishers texlive-formats-extra
 APT synaptic
 APT net-tools
 APT guake
@@ -38,12 +38,17 @@ APT pm-utils
 APT postgresql postgresql-contrib
 SNAP vlc
 SNAP discord --classic
+SNAP slack --classic
 SNAP pdftk
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "development dependencies"
 APT build-essential ffmpeg fluid-soundfont-gm fontconfig fonts-freefont-ttf gstreamer1.0-plugins-base gstreamer1.0-plugins-good libavcodec-dev libavformat-dev libfreetype6-dev libgstreamer1.0 libportmidi-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libsmpeg-dev libswscale-dev libtiff5-dev libx11-6 libx11-dev timgm6mb-soundfont xfonts-100dpi xfonts-75dpi xfonts-base xfonts-cyrillic zlib1g-dev
 sudo apt-get install -f
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "Java"
+APT openjdk-14-jre-headless openjdk-14-jdk-headless
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "uget"

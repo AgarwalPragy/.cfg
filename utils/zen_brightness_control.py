@@ -66,7 +66,7 @@ def main():
         with open(backlight_file, 'r') as f:
             backlight = int(f.read())
         with open(bottom_brightness_file, 'r') as f:
-            bottom_brightness = int(f.read().strip())
+            bottom_brightness = float(f.read().strip())
 
         new_percent = (backlight - min_backlight) / max_backlight
         if percent != new_percent:
