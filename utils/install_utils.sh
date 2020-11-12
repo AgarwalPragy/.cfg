@@ -130,6 +130,7 @@ echo "JetBrains"
 SNAP pycharm-professional --classic
 SNAP clion --classic
 SNAP intellij-idea-ultimate --classic
+SNAP android-studio --classic
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Sublime Text"
