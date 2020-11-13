@@ -133,6 +133,15 @@ SNAP intellij-idea-ultimate --classic
 SNAP android-studio --classic
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "Flutter"
+SNAP flutter --classic
+SNAP flutter-gallery
+flutter channel dev
+flutter upgrade
+flutter config --enable-linux-desktop
+
+echo "------------------------------------------------------------------------------------------------------"
+
 echo "Sublime Text"
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 APT apt-transport-https
@@ -189,6 +198,13 @@ rm -rf ~/.docker/
 sudo systemctl enable docker
 sudo service docker restart
 echo "------------------------------------------------------------------------------------------------------"
+
+echo "AWS CLI"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+echo "------------------------------------------------------------------------------------------------------"
+
 
 echo "Howdy"
 # this doesn't work well. Howdy tries to detect IR sensors on install, which requires interactive shell
