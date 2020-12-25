@@ -19,11 +19,12 @@ APT yarn
 echo "------------------------------------------------------------------------------------------------------"
 
 APT pyenv
-APT tmux
+# APT tmux
+# APT i3
 APT xclip
 APT bat
 APT htop
-APT ranger
+# APT ranger
 APT fd-find
 APT vim
 APT dconf-editor
@@ -35,7 +36,8 @@ APT net-tools
 APT guake
 APT ruby-github-linguist
 APT pm-utils
-APT postgresql postgresql-contrib
+APT gparted
+# APT postgresql postgresql-contrib
 SNAP vlc
 SNAP discord --classic
 SNAP slack --classic
@@ -48,7 +50,7 @@ sudo apt-get install -f
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Java"
-APT openjdk-14-jre-headless openjdk-14-jdk-headless
+APT default-jdk default-jre
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "uget"
@@ -58,7 +60,7 @@ APT uget aria2
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "JetBrains Mono"
-wget https://github.com/JetBrains/JetBrainsMono/releases/download/v2.001/JetBrains.Mono.2.001.zip
+wget https://github.com/JetBrains/JetBrainsMono/releases/download/v2.210/JetBrainsMono-2.210.zip
 unzip -q JetBrains*Mono*.zip
 sudo mv ~/JetBrains*Mono*/ttf/*.ttf /usr/share/fonts/
 rm -rf ~/JetBrains*Mono*
@@ -75,10 +77,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ~/.cargo/bin/cargo install cargo-expand
 ~/.cargo/bin/cargo install cargo-release
 ~/.cargo/bin/cargo install cargo-tree
+~/.cargo/bin/cargo install miniserve
 ~/.cargo/bin/rustup toolchain install nightly
-~/.cargo/bin/rustup default stable
-# currently not available in stable channel
-# ~/.cargo/bin/cargo install miniserve
+~/.cargo/bin/rustup default nightly
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Node, NPM"
@@ -133,14 +134,13 @@ SNAP intellij-idea-ultimate --classic
 SNAP android-studio --classic
 echo "------------------------------------------------------------------------------------------------------"
 
-echo "Flutter"
-SNAP flutter --classic
-SNAP flutter-gallery
-flutter channel dev
-flutter upgrade
-flutter config --enable-linux-desktop
-
-echo "------------------------------------------------------------------------------------------------------"
+# echo "Flutter"
+# SNAP flutter --classic
+# SNAP flutter-gallery
+# flutter channel dev
+# flutter upgrade
+# flutter config --enable-linux-desktop
+# echo "------------------------------------------------------------------------------------------------------"
 
 echo "Sublime Text"
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -205,21 +205,26 @@ unzip awscliv2.zip
 sudo ./aws/install
 echo "------------------------------------------------------------------------------------------------------"
 
-
-echo "Howdy"
-# this doesn't work well. Howdy tries to detect IR sensors on install, which requires interactive shell
-sudo add-apt-repository ppa:boltgolt/howdy
-sudo apt-fast update
-APT howdy
-sudo mkdir -p /usr/lib/security/howdy/models
-sudo cp $HOME/utils/.howdy-pragy /usr/lib/security/howdy/models/pragy.dat
+echo "AWS Vault"
+sudo curl -L -o /usr/local/bin/aws-vault https://github.com/99designs/aws-vault/releases/latest/download/aws-vault-linux-amd64
+sudo chmod 755 /usr/local/bin/aws-vault
 echo "------------------------------------------------------------------------------------------------------"
 
-echo "Xournal++"
-sudo add-apt-repository ppa:andreasbutti/xournalpp-master
-sudo apt update
-APT xournalpp
-echo "------------------------------------------------------------------------------------------------------"
+
+# echo "Howdy"
+# # this doesn't work well. Howdy tries to detect IR sensors on install, which requires interactive shell
+# sudo add-apt-repository ppa:boltgolt/howdy
+# sudo apt-fast update
+# APT howdy
+# sudo mkdir -p /usr/lib/security/howdy/models
+# sudo cp $HOME/utils/.howdy-pragy /usr/lib/security/howdy/models/pragy.dat
+# echo "------------------------------------------------------------------------------------------------------"
+
+# echo "Xournal++"
+# sudo add-apt-repository ppa:andreasbutti/xournalpp-master
+# sudo apt update
+# APT xournalpp
+# echo "------------------------------------------------------------------------------------------------------"
 
 echo "zoom.us"
 wget -O Downloads/zoom.deb https://zoom.us/client/latest/zoom_amd64.deb
