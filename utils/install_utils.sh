@@ -158,6 +158,10 @@ sudo apt -y install ./google-chrome*.deb
 rm ./google-chrome*.deb
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "Heroku CLI"
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+echo "------------------------------------------------------------------------------------------------------"
+
 # echo "VSCode"
 # SNAP --classic code
 # cp vs_code_keybindings.json ~/.config/Code/User/keybindings.json
@@ -237,6 +241,12 @@ echo "Sensors"
 APT lm-sensors
 APT hddtemp
 APT psensor
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "UNetbootin"
+sudo add-apt-repository ppa:gezakovacs/ppa
+sudo apt-get update
+sudo apt-get install unetbootin
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Desktop Settings"
