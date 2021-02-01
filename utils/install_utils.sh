@@ -175,6 +175,7 @@ sudo chsh -s $(which xonsh) $(whoami)
 sudo apt-fast -y install python3-pip
 xonsh -c "xpip install xonsh-apt-tabcomplete"
 xonsh -c "xpip install xonsh-docker-tabcomplete"
+sudo apt-fast -y install python3-packaging  # needed for powerline2
 xonsh -c "xpip install xontrib-powerline2"
 xonsh -c "xpip install xontrib-readable-traceback"
 xonsh -c "xpip install xontrib-pyenv"
