@@ -19,6 +19,7 @@ sudo apt-fast -y install pyenv
 # sudo apt-fast -y install i3
 sudo apt-fast -y install xclip
 sudo apt-fast -y install bat
+sudo apt-fast -y install xdotool
 sudo apt-fast -y install htop
 # sudo apt-fast -y install ranger
 sudo apt-fast -y install fd-find
