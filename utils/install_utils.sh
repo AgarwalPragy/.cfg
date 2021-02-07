@@ -34,7 +34,8 @@ sudo apt-fast -y install guake
 sudo apt-fast -y install ruby-github-linguist
 sudo apt-fast -y install pm-utils
 sudo apt-fast -y install gparted
-# sudo apt-fast -y install postgresql postgresql-contrib
+sudo apt-fast -y install postgresql postgresql-contrib
+
 sudo snap install vlc
 sudo snap install discord --classic
 sudo snap install slack --classic
@@ -44,6 +45,13 @@ echo "--------------------------------------------------------------------------
 echo "development dependencies"
 sudo apt-fast -y install build-essential ffmpeg fluid-soundfont-gm fontconfig fonts-freefont-ttf gstreamer1.0-plugins-base gstreamer1.0-plugins-good libavcodec-dev libavformat-dev libfreetype6-dev libgstreamer1.0 libportmidi-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libsmpeg-dev libswscale-dev libtiff5-dev libx11-6 libx11-dev timgm6mb-soundfont xfonts-100dpi xfonts-75dpi xfonts-base xfonts-cyrillic zlib1g-dev
 sudo apt-get install -f
+echo "------------------------------------------------------------------------------------------------------"
+
+echo "PGAdmin"
+curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list
+apt update
+sudo apt-fast -y install pgadmin4
 echo "------------------------------------------------------------------------------------------------------"
 
 echo "Java"
