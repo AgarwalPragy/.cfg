@@ -8,3 +8,6 @@
 	email = agar.pragy@gmail.com
 [color]
 	ui = auto
+[pull]
+	ff = only
+

@@ -47,6 +47,18 @@ sudo apt-fast -y install build-essential ffmpeg fluid-soundfont-gm fontconfig fo
 sudo apt-get install -f
 echo "------------------------------------------------------------------------------------------------------"
 
+echo "Python"
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-fast update
+sudo apt-fast -y install python2.7 python2.7-dev
+sudo apt-fast -y install python3.5 python3.5-dev
+sudo apt-fast -y install python3.6 python3.6-dev
+sudo apt-fast -y install python3.7 python3.7-dev
+sudo apt-fast -y install python3.8 python3.8-dev
+sudo apt-fast -y install python3.9 python3.9-dev
+echo "------------------------------------------------------------------------------------------------------"
+
+
 echo "PGAdmin"
 curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
 echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list
